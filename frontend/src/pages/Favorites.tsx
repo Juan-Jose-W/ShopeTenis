@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TenisCard from '../components/TenisCard';
+import { colors } from '@mui/material';
 
 interface Tenis {
   _id: string;
@@ -35,7 +36,7 @@ const Favorites: React.FC = () => {
 
   return (
     <div className="favorites">
-      <h1>Mis Tenis Favoritas</h1>
+      <h1 style={{ color: 'white' }}>Mis Tenis Favoritas</h1>
       {favorites.length > 0 ? (
         <div className="favorites-list">
           {favorites.map((tenis) => (

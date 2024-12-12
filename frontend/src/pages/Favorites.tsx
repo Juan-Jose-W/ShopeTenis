@@ -14,7 +14,7 @@ const Favorites: React.FC = () => {
   const [favorites, setFavorites] = useState<Tenis[]>([]);
 
   useEffect(() => {
-    // Cargar recetas favoritas desde el almacenamiento local
+    // Cargar tenis favoritas desde el almacenamiento local
     const storedFavorites = localStorage.getItem('favorites');
     if (storedFavorites) {
       setFavorites(JSON.parse(storedFavorites));
@@ -46,7 +46,7 @@ const Favorites: React.FC = () => {
               />
               <button
                 onClick={() => removeFromFavorites(tenis._id)}
-                className="remove-btn">
+                className="btn btn-remove-favorites">
                 Eliminar
               </button>
             </div>

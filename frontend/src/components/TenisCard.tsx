@@ -28,15 +28,19 @@ const TenisCard: React.FC<TenisCardProps> = ({
       <img src={imagenUrl || 'default.jpg'} alt={nombre} />
       <h3>{nombre}</h3>
       <p>
-        <strong>Categoria:</strong> {categoria}
+        <strong style={{ color: 'black' }}>CATEGORIA:</strong> {categoria}
       </p>
-      <h4>Precio:</h4>
+      <h4>PRECIO:</h4>
       <ul>
-        {precio.map((precio, index) => (
-          <li key={index}>{precio}</li>
-        ))}
+        {Array.isArray(precio) && precio.length > 0 ? (
+          precio.map((precioItem, index) => (
+            <li key={index} style={{ color: 'white' }}>{precioItem}</li>
+          ))
+        ) : (
+          <li>No hay precios disponibles</li>
+        )}
       </ul>
-      <h4>Descripcion:</h4>
+      <h4>DESCRIPCION:</h4>
       <p>{descripcion}</p>
       
       <div className="tenis-card-actions">

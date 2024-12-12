@@ -1,14 +1,17 @@
 /* General Styles */
 body {
+  background: url('./universo.png') no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
+  height: auto;
 }
 
-h1, h2, h3 {
-  color: #d32f2f; /* Un rojo navideño */
+h1, h2, h3 ,h4{
+  color: #000000; /* Un rojo navideño */
 }
 
 p {
@@ -22,7 +25,7 @@ a {
 
 /* Navbar */
 .navbar {
-  background-color: #d32f2f;
+  background-color: #1f1919;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap; /* Permite que los elementos se ajusten */
@@ -32,52 +35,81 @@ a {
 }
 
 .navbar a {
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 1rem;
   margin: 0.5rem; /* Espaciado entre enlaces */
+  transition: transform 0.3s ease; /* Agrega una transición suave */
 }
 
 .navbar a:hover {
   text-decoration: underline;
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
 }
 
 /* Footer */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el contenedor ocupe al menos toda la altura de la ventana */
+}
+
+/* Contenido principal */
+.content {
+  flex: 1; /* Esto permite que el contenido ocupe el espacio restante */
+}
+
+/* Estilos del footer */
 .footer {
-  background-color: #333;
+  background-color: #000000;
   color: white;
   text-align: center;
   padding: 1rem;
-  position: relative; /* Cambiado a relative para evitar problemas en móviles */
   width: 100%;
 }
 
 /* tenis Card */
 .tenis-card {
-  background-color: white;
-  border: 1px solid #ddd;
+  background: rgba(255, 255, 255, 0.1); /* Color de fondo con 80% de opacidad */
+  border-radius: 8px;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
   margin: 1rem;
   max-width: 300px;
   flex: 1 1 calc(33.333% - 2rem); /* Ajuste para 3 columnas en pantallas grandes */
   text-align: center;
+  transition: transform 0.3s ease; /* Agrega una transición suave */
+  backdrop-filter: blur(1px); /* Mantiene el efecto de desenfoque */
+}
+
+.tenis-card:hover {
+  transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+  backdrop-filter: blur(15px);
 }
 
 .tenis-card img {
+  max-width: 100%;
+  border-radius: 4px;
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-bottom: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.tenis-card:hover img {
+  transform: translateY(-10px) rotateY(5deg); /* Efecto de desplazamiento y rotación al pasar el mouse */
 }
 
 .tenis-card h3 {
   margin: 0.5rem 0;
+  color: rgb(0, 0, 0);
 }
 
 .tenis-card p {
-  color: #666;
+  color: #ffffff;
   font-size: 0.9rem;
 }
 
@@ -100,7 +132,7 @@ a {
 
 .user-card p {
   font-size: 0.9rem;
-  color: #555;
+  color: #000000;
 }
 
 /* Forms */
@@ -174,6 +206,10 @@ form button:hover {
   margin-bottom: 1rem;
 }
 
+.strong{
+  color: #000000;
+}
+
 .tenis-details h1 {
   color: #d32f2f;
   margin-bottom: 1rem;
@@ -224,12 +260,12 @@ form button:hover {
 
 /* Botón de Agregar a Favoritos */
 .btn-add-favorites {
-  background-color: #4CAF50; /* Verde */
-  color: white;
+  background-color: #5c855d; /* Verde */
+  color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 60px;
 }
 
 .btn-add-favorites:hover {
@@ -248,7 +284,7 @@ form button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 60px;
 }
 
 .btn-remove-favorites:hover {
@@ -262,7 +298,7 @@ form button:hover {
 
 /* Iconos dentro de los botones (opcional) */
 .btn-icon {
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 /* Contenedor de botones */

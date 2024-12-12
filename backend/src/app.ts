@@ -6,7 +6,8 @@ import userRoutes from './routes/userRoutes';
 const app = express();
 
 app.use(cors());
-app.use(express.json());
+// Aumentar el límite a 10mb
+app.use(express.json({ limit: '10mb' }));
 
 app.use('/api/tenis', tenisRoutes);
 app.use('/api/users', userRoutes);
